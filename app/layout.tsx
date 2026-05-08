@@ -1,20 +1,28 @@
-import type { Metadata } from 'next'
-import './globals.css'
+export const runtime = 'nodejs'
 
-export const metadata: Metadata = {
-  title: 'Bodyology',
-  description: 'Personalised training platform connecting coaches and clients',
-}
+import { redirect } from 'next/navigation'
+import { createClient } from '@/lib/supabase/server'
+import Sidebar from '@/components/shared/Sidebar'
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
+  const supabase = createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+  if (!user) redirect('/auth/login')
+
+  const { data: profile } = await supabase
+    .from('users')
+    .select('*')
+    .eq('id', user.id)
+    .single()
+
+  const role = profile?.role ?? user.user_metadata?.role ?? 'client'
+
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-      </head>
-      <body>{children}</body>
-    </html>
+    <div className="flex min-h-screen bg-gray-50">
+      <Sidebar role={role} userName={profile?.full_name ?? ''} userId={user.id} />
+      <main className="flex-1 min-w-0 p-5 lg:p-6 overflow-y-auto">
+        {children}
+      </main>
+    </div>
   )
 }
