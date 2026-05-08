@@ -31,8 +31,8 @@ cp .env.local.example .env.local
 Fill in `.env.local`:
 
 ```
-NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+NEXT_PUBLIC_SUPABASE_URL=https://qdmlfddbsewqyywzilma.supabase.co/
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFkbWxmZGRic2V3cXl5d3ppbG1hIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgyMzQwNTAsImV4cCI6MjA5MzgxMDA1MH0.z9oxCSevQ8wRrUHFh1TVOCOd-BtySE2i9KyA48fkGI8
 ANTHROPIC_API_KEY=sk-ant-your-key
 ```
 
