@@ -76,7 +76,7 @@ export default function SignupPage() {
         </button>
         <p className="text-xs text-center text-gray-400">
           Already have an account?{' '}
-          <Link href="/auth/login" className="text-teal-600 hover:underline">Sign in</Link>
+          <Link href="/login-flow/login" className="text-teal-600 hover:underline">Sign in</Link>
         </p>
       </form>
     </div>

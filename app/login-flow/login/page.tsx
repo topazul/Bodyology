@@ -59,7 +59,7 @@ export default function LoginPage() {
         </button>
         <p className="text-xs text-center text-gray-400">
           No account?{' '}
-          <Link href="/auth/signup" className="text-teal-600 hover:underline">Sign up</Link>
+          <Link href="/login-flow/signup" className="text-teal-600 hover:underline">Sign up</Link>
         </p>
       </form>
     </div>
