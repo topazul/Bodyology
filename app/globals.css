@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --teal: #1D9E75;
+    --teal-light: #E1F5EE;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  input, textarea, select {
+    @apply outline-none;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white border border-gray-100 rounded-xl overflow-hidden;
+  }
+  .card-header {
+    @apply px-4 py-3 border-b border-gray-100 flex items-center justify-between;
+  }
+  .card-title {
+    @apply text-sm font-medium text-gray-900;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium
+           bg-teal-400 text-white border border-teal-400
+           hover:bg-teal-600 hover:border-teal-600 transition-colors cursor-pointer;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium
+           bg-white text-gray-700 border border-gray-200
+           hover:bg-gray-50 transition-colors cursor-pointer;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium
+           text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-colors cursor-pointer border-0;
+  }
+  .input {
+    @apply w-full border border-gray-200 rounded-lg px-3 py-2 text-sm
+           bg-gray-50 text-gray-900 placeholder-gray-400
+           focus:ring-1 focus:ring-teal-400 focus:border-teal-400 transition-colors;
+  }
+  .label {
+    @apply block text-xs font-medium text-gray-600 mb-1;
+  }
+  .tag {
+    @apply inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full border font-medium;
+  }
+  .pct-pill {
+    @apply inline-flex items-center text-xs font-medium px-2 py-0.5 rounded-full border;
+  }
+  .sidebar-item {
+    @apply flex items-center gap-2 px-3.5 py-2 text-sm text-gray-500 cursor-pointer
+           border-l-2 border-transparent hover:bg-gray-50 hover:text-gray-800 transition-all;
+  }
+  .sidebar-item.active {
+    @apply bg-gray-50 text-gray-900 font-medium border-l-2 border-teal-400;
+  }
+}
