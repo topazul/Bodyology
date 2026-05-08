@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Users, TrendingUp, Trophy, Calendar } from 'lucide-react'
 
 export default async function CoachClientsPage() {
-  const supabase = createClient()
+  const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
 
   const { data: relationships } = await supabase

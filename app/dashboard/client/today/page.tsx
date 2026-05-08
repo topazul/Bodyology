@@ -4,7 +4,7 @@ import BodyMap from '@/components/shared/BodyMap'
 import MessageThread from '@/components/shared/MessageThread'
 
 export default async function ClientTodayPage() {
-  const supabase = createClient()
+  const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
 
   const { data: relationship } = await supabase

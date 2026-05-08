@@ -5,7 +5,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
         <div className="text-center mb-8">
           <div className="inline-flex items-baseline gap-0">
             <span className="text-2xl font-medium tracking-tight text-gray-900">Body</span>
-            <div className="w-1.5 h-1.5 rounded-full bg-teal-400 mb-0.5 mx-0.5" />
+           <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mb-0.5 mx-0.5" />
             <span className="text-2xl font-medium tracking-tight text-gray-900">logy</span>
           </div>
           <p className="text-xs text-gray-400 tracking-widest uppercase mt-1">Your training partner</p>

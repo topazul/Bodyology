@@ -60,9 +60,7 @@ export default function SignupPage() {
                 type="button"
                 onClick={() => setRole(r)}
                 className={`flex-1 py-2 rounded-lg text-sm font-medium border transition-colors ${
-                  role === r
-                    ? 'bg-teal-400 text-white border-teal-400'
-                    : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50'
+                 role === r ? 'bg-purple-400 text-white border-purple-400' : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50'
                 }`}
               >
                 {r.charAt(0).toUpperCase() + r.slice(1)}
@@ -71,9 +69,12 @@ export default function SignupPage() {
           </div>
         </div>
         {error && <p className="text-xs text-red-500">{error}</p>}
-        <button type="submit" className="btn-primary justify-center py-2 text-sm" disabled={loading}>
-          {loading ? 'Creating account…' : 'Create account'}
-        </button>
+       <button type="submit"
+        className="w-full py-2 px-4 rounded-lg text-sm font-medium text-white transition-colors disabled:opacity-50"
+        style={{ background: '#7F77DD' }}
+        disabled={loading}>
+        {loading ? 'Creating account…' : 'Create account'}
+      </button>
         <p className="text-xs text-center text-gray-400">
           Already have an account?{' '}
           <Link href="/login-flow/login" className="text-teal-600 hover:underline">Sign in</Link>
